@@ -1,0 +1,36 @@
+# bc_simple_rules.krb
+
+no_rain
+    use what_to_bring(no_rain_gear)
+    when
+        questions.is_raining(False)
+
+what_to_bring_raincoat
+    use what_to_bring(raincoat)
+    when
+        questions.is_raining(True)
+        questions.is_windy(False)
+	
+what_to_bring_umbrella
+    use what_to_bring(umbrella)
+    when
+        questions.is_raining(True)
+        questions.is_windy(True)
+
+what_to_bring_marshmellos
+    use what_to_bring(marshmellos)
+    when
+        questions.any_disasters($ans)
+        check $ans in (1,)
+	
+what_to_bring_kite
+    use what_to_bring(kite)
+    when
+        questions.any_disasters($ans)
+        check $ans in (2,3)
+
+what_to_bring_tissues
+    use what_to_bring(tissues)
+    when
+        questions.any_disasters($ans)
+        check $ans in (4,)

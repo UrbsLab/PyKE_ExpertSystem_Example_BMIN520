@@ -1,0 +1,22 @@
+# questions.kqb
+
+any_disasters($ans)
+	Are any of the following disasters currently occurring?
+	---
+	$ans = select_1
+		1: Forest Fire
+		2: Tornado
+		3: Hurricane
+		4: Pandemic
+		5: None of the above
+			! Thank goodness
+
+is_raining($ans)
+	Is it raining?
+	---
+	$ans = yn
+	
+is_windy($ans)
+	Is it windy?
+	---
+	$ans = yn
